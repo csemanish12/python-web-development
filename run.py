@@ -9,9 +9,8 @@ from auth.resources.signup_resource import SignupResource
 
 app = Flask(__name__)
 api = Api(app, prefix='/v1')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://snc:csit@localhost/csit-snc'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['JWT_SECRET_KEY'] = 'secret'
+app.config.from_object('config.default')
+app.config.from_envvar('CONFIGURATION_FILE')
 
 
 @app.before_first_request

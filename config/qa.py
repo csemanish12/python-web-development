@@ -1,0 +1,2 @@
+DEBUG = True
+CUSTOM_VARIABLE = 'qa'
